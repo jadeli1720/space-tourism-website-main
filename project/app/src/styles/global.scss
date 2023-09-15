@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap');
+@use './mixins.scss' as mixin;
 
 /* ---------------- */
 /* RESETS           */ 
@@ -8,7 +8,7 @@
 *,
 *::after,
 *::before
- {
+{
   box-sizing: border-box;
 }
 
@@ -79,3 +79,20 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+.sr-only {
+  position: absolute;
+  border: 0;
+  clip: rect(0,0,0,0);
+  margin: -1px;
+  padding: 0;
+  height: 1px;
+  width: 1px;
+  white-space: nonwarp;/* added line*/
+  overflow: hidden;
+}
+
+p {
+  @include mixin.body()
+}
+

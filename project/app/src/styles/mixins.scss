@@ -1,6 +1,71 @@
+
+/* ---------------- */
+/* FONTS            */ 
+/* ---------------- */
+
+@mixin headingOne() {
+  font-family: 'Bellefair', serif;
+  font-size: 9.375rem;
+  font-weight: 400;
+}
+
+@mixin headingTwo() {
+  font-family: 'Bellefair', serif;
+  font-size: 6.25rem;
+  font-weight: 400;
+}
+
+@mixin headingThree() {
+  font-family: 'Bellefair', serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+}
+
+@mixin headingFour() {
+  font-family: 'Bellefair', serif;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+@mixin headingFive() {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  letter-spacing: 0.297rem;
+}
+
+@mixin subHeadingOne() {
+  font-family: 'Bellefair', serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+}
+
+@mixin subHeadingTwo() {
+  font-family: 'Bellefair', serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.147rem;
+}
+
+@mixin nav() {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.169rem;
+}
+
+@mixin body() {
+  font-family: 'Barlow', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 2rem;
+}
+
 @mixin displayFlex($direction, $align, $justify) {
     display: flex;
     flex-direction: $direction;
     align-items: $align;
     justify-content: $justify;
 }
+
+
