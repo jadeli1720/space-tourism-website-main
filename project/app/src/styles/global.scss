@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap');
 
+/* ---------------- */
+/* RESETS           */ 
+/* ---------------- */
+
 /*Box Sizing*/ 
 *,
 *::after,
@@ -40,6 +44,18 @@ body {
   line-height: 1.5;
 }
 
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
 /* Inherit fonts for inputs and buttons */
 input,
 button,
@@ -51,7 +67,7 @@ select {
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: auto;
+    scroll-behavior: auto;
   }
   
   *,
@@ -63,5 +79,3 @@ select {
     scroll-behavior: auto !important;
   }
 }
-
-
