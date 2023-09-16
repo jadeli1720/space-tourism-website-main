@@ -1,6 +1,8 @@
 import React from 'react';
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from "../assets/images/shared/logo.svg";
+import hamburger from '../assets/images/shared/icon-hamburger.svg';
+import closeIcon from '../assets/images/shared/icon-close.svg';
 
 const Header = () => {
   return (
@@ -17,7 +19,7 @@ const Header = () => {
 					<hr />
 				</div>
 				<nav>
-					<ul>
+					<ul className='navBar'>
 						<li>
 							<NavLink to='/'>
 								<span>00</span>

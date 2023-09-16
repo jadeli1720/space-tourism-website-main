@@ -1,5 +1,10 @@
 @import-normalize;
-@import './fonts.scss';
+@import './util/fonts.scss';
 @import './global.scss';
-@import './variables.scss';
-@import './mixins.scss';
+@import './util/variables.scss';
+@import './util/mixins.scss';
+@import './components/header.scss';
+@import './components/crew.scss';
+@import './components/destination.scss';
+@import './components/homepage.scss';
+@import './components/technology.scss';
