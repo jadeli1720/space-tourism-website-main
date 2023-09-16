@@ -11,7 +11,7 @@ import {
 
 function App() {
 	return (
-		<main className='App'>
+		<main className='main'>
 			<Header />
 				<Routes>
 					<Route path='/' Component={Homepage} />

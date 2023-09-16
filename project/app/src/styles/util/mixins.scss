@@ -1,7 +1,5 @@
 
-/* ---------------- */
-/* FONTS            */ 
-/* ---------------- */
+/**************FONT PRESETS**************/
 
 @mixin headingOne() {
   font-family: 'Bellefair', serif;
@@ -49,14 +47,15 @@
 
 @mixin nav() {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 1rem;
+  font-size: 1.125rem;
   font-weight: 400;
   letter-spacing: 0.169rem;
+  
 }
 
 @mixin body() {
   font-family: 'Barlow', sans-serif;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 2rem;
 }
@@ -66,6 +65,51 @@
     flex-direction: $direction;
     align-items: $align;
     justify-content: $justify;
+}
+
+/**************KEYFRAMES STYLING**************/
+@mixin keyframes($value) {
+  @-webkit-keyframes #{$value} {
+    @content;
+  }
+  @-moz-keyframes #{$value} {
+    @content;
+  }
+  @-o-keyframes #{$value} {
+    @content;
+  }
+  @keyframes #{$value} {
+    @content;
+  }
+}
+
+/**************MEDIA QUERIES**************/
+@mixin max-media-query($size) {
+	@if ($size) {
+		@media (max-width: $size) {
+			@content;
+		}
+	}
+}
+
+@mixin min-media-query ($size) {
+	@if ($size) {
+		@media (min-width: $size) {
+			@content;
+		}
+	}
+}
+
+/**************PREFIXES STYLING**************/
+$prefixes: "webkit", "moz", "ms", "o", " ";
+@mixin prefix($property, $arguments) {
+  @each $prefix in $prefixes {
+    @if $prefix == " " {
+      #{$property}: $arguments;
+    } @else {
+      -#{$prefix}-#{$property}:$arguments;
+    }
+  }
 }
 
 

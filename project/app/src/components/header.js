@@ -5,43 +5,52 @@ import hamburger from '../assets/images/shared/icon-hamburger.svg';
 import closeIcon from '../assets/images/shared/icon-close.svg';
 
 const Header = () => {
+
+  const setActiveLink = e => {
+    const links = document.getElementsByClassName('link')
+    Array.from(links).forEach(el => el.classList.remove('.active'));
+    e.target.classList.add('active')
+  }
+
+
   return (
 		<>
 			<header>
 				<div className='logo'>
-					<NavLink href='/'>
+					<a href='/'>
 						<img
 							src={logo}
 							alt='Space Travel Logo'
 							title='Travel to Space'
+              className='logo'
 						/>
-					</NavLink>
-					<hr />
+					</a>
 				</div>
-				<nav>
-					<ul className='navBar'>
-						<li>
-							<NavLink to='/'>
-								<span>00</span>
-								<p>Home</p>
+				<div className='border'></div>
+				<nav className='nav-menu'>
+					<ul className='nav-list'>
+						<li className="nav-item" onClick={setActiveLink}>
+							<NavLink to='/' className="link">
+								<span className='nav-number'>00</span>
+								Home
 							</NavLink>
 						</li>
-						<li>
-							<NavLink to='/destination'>
-								<span>01</span>
-								<p>Destination</p>
+						<li className="nav-item" onClick={setActiveLink}>
+							<NavLink to='/destination' className="link">
+								<span className='nav-number'>01</span>
+								Destination
 							</NavLink>
 						</li>
-						<li>
-							<NavLink to='/crew'>
-								<span>02</span>
-								<p>Crew</p>
+						<li className="nav-item" onClick={setActiveLink}>
+							<NavLink to='/crew' className="link">
+								<span className='nav-number'>02</span>
+								Crew
 							</NavLink>
 						</li>
-						<li>
-							<NavLink to='/technology'>
-								<span>00</span>
-								<p>Technology</p>
+						<li className="nav-item" onClick={setActiveLink}>
+							<NavLink to='/technology' className="link">
+								<span className='nav-number'>00</span>
+								Technology
 							</NavLink>
 						</li>
 					</ul>

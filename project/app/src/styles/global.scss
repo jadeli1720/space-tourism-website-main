@@ -1,8 +1,6 @@
 @use './util/mixins.scss' as mixin;
 
-/* ---------------- */
-/* RESETS           */ 
-/* ---------------- */
+/**************GLOBAL RESETS**************/
 
 /*Box Sizing*/ 
 *,
@@ -80,21 +78,25 @@ select {
   }
 }
 
-
-//TODO: Don't know if I'll need this.
-.sr-only {
-  position: absolute;
-  border: 0;
-  clip: rect(0,0,0,0);
-  margin: -1px;
-  padding: 0;
-  height: 1px;
-  width: 1px;
-  white-space: nonwarp;/* added line*/
-  overflow: hidden;
-}
+/**************GLOBAL STYLING**************/
 
 p {
-  @include mixin.body()
+  @include mixin.body();
+  color: $light-blue;
+}
+
+//TODO: The image isn't working on responsive sizes
+//Desktop sizing: 1440 X 900
+//Tablet: 768 X 1024
+//Mobile: 375 X 667
+//TODO: We will have to change this for each page. How?
+main {
+  background-image: url(../assets/images/home/background-home-desktop.jpg);
+  background-size: 100% 100%;
+  background-color: $dark-blue;
+  width:100%;
+  min-height: 100vh;
+  transition: 0.5s ease;
+  overflow: hidden;
 }
 
