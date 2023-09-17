@@ -99,7 +99,7 @@ p {
 main {
   // background-image: url(../assets/images/home/background-home-desktop.jpg);
   // background-size: 100% 100%;
-  background-color: $dark-blue;
+  // background-color: $dark-blue;
   width:100%;
   min-height: 100vh;
   transition: 0.5s ease;
@@ -117,16 +117,34 @@ main {
     background-position: center bottom;
     background-repeat: no-repeat;
     min-height: 100vh;
-    min-width: 290px;
     width: 100%;
-    transform: rotate(0deg);
+    // transform: rotate(0deg);
     z-index: -1;
 }
 
 /* ========== TABLET =========== */
+@include mixin.min-media-query($tablet-xs){
+  #background {
+    background-image: var(--background-tablet);
+        background-size: 100% 100vh;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        width: 100%;
+  }
+}
 
 /* ========== DESKTOP =========== */
 @include mixin.min-media-query($desktop-sm){
-
+  #background {
+    background-image: var(--background-desktop);
+    background-size: cover;
+    background-position: right;
+    width: 100%;
+    min-height: 100vh;
+    transform: rotate(0);
+    top: 0;
+    right: 0;
+  }
 }
 

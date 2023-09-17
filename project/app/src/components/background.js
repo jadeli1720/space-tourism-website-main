@@ -14,26 +14,31 @@ import techMobile from '../assets/images/technology/background-technology-mobile
 const changeBackground = (pageName) => {
   let backgroundDesktop, backgroundTablet, backgroundMobile;
 
+  //TODO: console.log() cleanup
   switch (pageName) {
 		case 'homepage':
+      console.log("homepage")
 			backgroundDesktop = `url(${homeDesktop})`;
 			backgroundTablet = `url(${homeTablet})`;
 			backgroundMobile = `url(${homeMobile})`;
 			break;
 
 		case 'destinationPage':
+      console.log('destination');
 			backgroundDesktop = `url(${destinationDesktop})`;
 			backgroundTablet = `url(${destinationTablet})`;
 			backgroundMobile = `url(${destinationMobile})`;
 			break;
 
 		case 'crewPage':
+      console.log('crew');
 			backgroundDesktop = `url(${crewDesktop})`;
 			backgroundTablet = `url(${crewTablet})`;
 			backgroundMobile = `url(${crewMobile})`;
 			break;
 
 		case 'technologyPage':
+      console.log('technology');
 			backgroundDesktop = `url(${techDesktop})`;
 			backgroundTablet = `url(${techTablet})`;
 			backgroundMobile = `url(${techMobile})`;
@@ -56,6 +61,8 @@ const changeBackground = (pageName) => {
 		'--background-mobile',
 		backgroundMobile
   );
+
+
 }
 
 export default changeBackground;

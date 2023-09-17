@@ -2,7 +2,13 @@ import React from 'react';
 import changeBackground from './background';
 
 const Homepage = () => {
-	return <p>This is the Homepage Page</p>;
+	window.addEventListener('load', changeBackground('homepage'))
+
+	return (
+		<div>
+			<p>This is the Homepage Page</p>
+		</div>
+	)
 };
 
 export default Homepage;
