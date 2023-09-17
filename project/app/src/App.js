@@ -14,10 +14,10 @@ function App() {
 		<main className='main'>
 			<Header />
 				<Routes>
-					<Route path='/' Component={Homepage} />
-					<Route path='/destination' Component={Destination} />
-					<Route path='/crew' Component={Crew} />
-					<Route path='/technology' Component={Technology} />
+					<Route exact path='/' Component={Homepage} />
+					<Route exact path='/destination' Component={Destination} />
+					<Route exact path='/crew' Component={Crew} />
+					<Route exact path='/technology' Component={Technology} />
 				</Routes>
 		</main>
 	);

@@ -1,15 +1,15 @@
-/* ---------------- */
-/* COLORS           */ 
-/* ---------------- */
+/**************BACKGROUND**************/
+:root{
+    --background-mobile: "";
+    --background-tablet: "";
+    --background-desktop: "";
+}
 
+/**************COLORS**************/
 $light-blue: #D0D6F9;
 $dark-blue: #0B0D17;
 
-
-/* ---------------- */
-/* SCREEN SIZES     */ 
-/* ---------------- */
-
+/**************SCREEN SIZES**************/
 //390px
 $mobile-sm: 24.375rem;
 //428px

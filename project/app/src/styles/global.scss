@@ -1,5 +1,6 @@
 @use './util/mixins.scss' as mixin;
 
+
 /**************GLOBAL RESETS**************/
 
 /*Box Sizing*/ 
@@ -8,6 +9,8 @@
 *::before
 {
   box-sizing: border-box;
+  @include mixin.body();
+  padding: 0;
 }
 
 /* Remove default margin */
@@ -24,12 +27,6 @@ dd {
   margin: 0;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'], li {
-  list-style: none !important;
-}
-
 /* Set core root defaults */
 html:focus-within {
   scroll-behavior: smooth;
@@ -40,6 +37,15 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'], li {
+  list-style: none;
+}
+a {
+  text-align: none;
 }
 
 /* A elements that don't have a class get default styles */
@@ -91,12 +97,36 @@ p {
 //Mobile: 375 X 667
 //TODO: We will have to change this for each page. How?
 main {
-  background-image: url(../assets/images/home/background-home-desktop.jpg);
-  background-size: 100% 100%;
+  // background-image: url(../assets/images/home/background-home-desktop.jpg);
+  // background-size: 100% 100%;
   background-color: $dark-blue;
   width:100%;
   min-height: 100vh;
   transition: 0.5s ease;
   overflow: hidden;
+}
+
+/* ========== MOBILE =========== */
+#background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: $dark-blue;
+    background-image: var(--background-mobile);
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    min-width: 290px;
+    width: 100%;
+    transform: rotate(0deg);
+    z-index: -1;
+}
+
+/* ========== TABLET =========== */
+
+/* ========== DESKTOP =========== */
+@include mixin.min-media-query($desktop-sm){
+
 }
 

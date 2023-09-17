@@ -1,74 +1,79 @@
 @use '../util/mixins.scss' as mixin;
 //TODO: starting @1440, may want to switch this around to mobile first design
-header {
-  
-  @include mixin.displayFlex(row, center, space-between);
-  margin: 40px 0 0  55px;
-  max-height: 96px;
-  height: 100%;
 
-  .logo {
-    height: auto;
-    max-width: 48px;
-    width: 100%;
-  }
+/* ========== MOBILE =========== */
 
-  //473px @1440
-  .border{
-    position: absolute;
-    left: 168px;
-    background-color:  rgba(255, 255, 255, 0.25);
-    // opacity: 0.25;
-    margin: 0;
-    height: 1px;
-    max-width: 473px;
-    width: 100%;
-    z-index: 1;
-  }
-  
-  .nav-menu {
-    @include mixin.displayFlex(row, center, center);
-    padding: 20px 0;
-    width: 60.25%;
-    
-  }
+/* ========== TABLET =========== */
 
-
-  @supports (backdrop-filter: blur(36px)) {
-    .nav-menu {
-      background: rgba(255, 255, 255, 0.062);
-      backdrop-filter: blur(36px);
-    }
-  }
-
-  .nav-list {
+/* ========== DESKTOP =========== */
+@include mixin.min-media-query($desktop-sm) {
+  header {
     @include mixin.displayFlex(row, center, space-between);
-    padding: 0;
-    max-width: 542px;
-    width: 100%;
-    margin-left: -24px;
-    
-    .nav-item, .link {
-      @include mixin.nav();
-      color: $light-blue;
-      text-decoration: none;
-      text-transform: uppercase;
-      cursor: pointer;
+    margin: 40px 0 0  55px;
+    max-height: 96px;
+    height: 100%;
+
+    .logo {
+      height: auto;
+      max-width: 48px;
+      width: 100%;
     }
 
-    .nav-item {
-      .link.active, .link:hover {
-        border-bottom: 3px solid white;
-        padding-bottom: 36.5px;
+    //473px @1440
+    //TODO: change this to be vw
+    .border{
+      position: absolute;
+      left: 168px;
+      background-color:  rgba(255, 255, 255, 0.25);
+      margin: 0;
+      height: 1px;
+      // max-width: 473px;
+      width: 34%;
+      z-index: 1;
+    }
+    
+    .nav-menu {
+      @include mixin.displayFlex(row, center, center);
+      padding: 20px 0;
+      width: 60.25%;
+    }
+
+    @supports (backdrop-filter: blur(36px)) {
+      .nav-menu {
+        background: rgba(255, 255, 255, 0.062);
+        backdrop-filter: blur(36px);
+      }
+    }
+
+    .nav-list {
+      @include mixin.displayFlex(row, center, space-between);
+      padding: 0;
+      max-width: 542px;
+      width: 100%;
+      margin-left: -24px;
+      
+      .nav-item, .link {
+        @include mixin.nav();
+        color: $light-blue;
+        text-decoration: none;
+        text-transform: uppercase;
+        cursor: pointer;
       }
 
-      .link:hover {
-        border-color: rgba(255, 255, 255, 0.50);
-      }
+      .nav-item {
+        .link.active, .link:hover {
+          border-bottom: 3px solid white;
+          padding-bottom: 38px;
+        }
 
-      .nav-number {
-          font-weight: bold !important;
-          margin-right: 8px;
+        .link:hover {
+          border-color: rgba(255, 255, 255, 0.50);
+        }
+
+        .nav-number {
+            font-weight: bold !important;
+            margin-right: 8px;
+        }
       }
     }
   }
