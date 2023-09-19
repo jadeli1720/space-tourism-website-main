@@ -1,50 +1,65 @@
 
 /**************FONT PRESETS**************/
 
-@mixin headingOne() {
+//150px
+@mixin headingOne($line-height) {
   font-family: 'Bellefair', serif;
   font-size: 9.375rem;
   font-weight: 400;
+  line-height: $line-height;
 }
 
-@mixin headingTwo() {
+//100px
+@mixin headingTwo($line-height) {
   font-family: 'Bellefair', serif;
   font-size: 6.25rem;
   font-weight: 400;
+  line-height: $line-height;
 }
 
-@mixin headingThree() {
+//56px
+@mixin headingThree($line-height) {
   font-family: 'Bellefair', serif;
   font-size: 3.5rem;
   font-weight: 400;
+  line-height: $line-height;
 }
 
-@mixin headingFour() {
+//32px
+@mixin headingFour($line-height) {
   font-family: 'Bellefair', serif;
   font-size: 2rem;
   font-weight: 400;
+  line-height: $line-height
 }
 
-@mixin headingFive() {
+//28px
+@mixin headingFive($line-height) {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 1.75rem;
   font-weight: 400;
+  line-height: $line-height;
   letter-spacing: 0.297rem;
 }
 
-@mixin subHeadingOne() {
+//28px
+@mixin subHeadingOne($line-height) {
   font-family: 'Bellefair', serif;
   font-size: 1.75rem;
   font-weight: 400;
+  line-height: $line-height;
 }
 
-@mixin subHeadingTwo() {
+//14px
+@mixin subHeadingTwo($line-height) {
   font-family: 'Bellefair', serif;
   font-size: 0.875rem;
   font-weight: 400;
+  line-height: $line-height;
   letter-spacing: 0.147rem;
 }
 
+//18px
 @mixin nav() {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 1.125rem;

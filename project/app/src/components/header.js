@@ -3,15 +3,10 @@ import { NavLink } from "react-router-dom";
 import logo from "../assets/images/shared/logo.svg";
 import hamburger from '../assets/images/shared/icon-hamburger.svg';
 import closeIcon from '../assets/images/shared/icon-close.svg';
+import { navItems } from "../data/utils";
 
 const Header = () => {
 	const [openNav, setOpenNav] = useState(false);	
-	const menuItems = [
-		{ name: 'Home', href: '/', number:'00' },
-		{ name: 'Destination', href: '/destination', number:'01' },
-		{ name: 'Crew', href: '/crew', number:'02' },
-		{ name: 'Technology', href: '/technology', number:'03' },
-	];
 
   const setActiveLink = e => {
     const links = document.getElementsByClassName('link')
@@ -28,14 +23,13 @@ const Header = () => {
 							src={logo}
 							alt='Space Travel Logo'
 							title='Travel to Space'
-							className='logo'
 						/>
 					</a>
 				</div>
 				<div className='border'></div>
 				<nav className={`nav-menu ${openNav ? 'show' : ''}`}>
 					<ul className='nav-list'>
-						{menuItems.map((item, i) => (
+						{navItems.map((item, i) => (
 							<li
 								className='nav-item'
 								onClick={setActiveLink}

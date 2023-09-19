@@ -1,10 +1,57 @@
 @use '../util/mixins.scss' as mixin;
 
-p {
-  margin: 96px 48px;
+/* ========== MOBILE =========== */
+#homepage {
+  @include mixin.displayFlex(column, center, unset);
+  text-align: center;
+  height: 100vh;
+  margin: 40px 1.5rem 0;
+  
+  .page-title{
+    color: $light-blue;
+    
+  }
+
+  h1 {
+    @include mixin.headingTwo(100px);
+    color: white;
+    font-size: 80px;
+    text-transform: uppercase;
+    margin: 0.75rem 0;
+  }
+
+  .page-paragraph {
+    text-align: center;
+  }
+
+  .explore-btn {
+    margin-top: 88px ;
+
+    .container {
+      @include mixin.displayFlex(row, center, center);
+      cursor: pointer;
+      background-color: white;
+      border-radius: 50%;
+      height: 150px;
+      width: 150px;
+
+    }
+
+    a {
+      @include mixin.subHeadingOne(unset);
+      color: $dark-blue;
+      font-size: 20px;
+      line-height: 20px !important;
+      letter-spacing: 1.25px;
+      text-decoration: none;
+      text-transform: uppercase;
+      //Cheat to center the text
+      margin-top: 4px;
+      transition: 0.4s ease-in-out;
+    }
+  }
 }
 
-/* ========== MOBILE =========== */
 
 /* ========== TABLET =========== */
 

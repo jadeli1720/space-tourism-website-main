@@ -2,7 +2,6 @@
 
 
 /**************GLOBAL RESETS**************/
-
 /*Box Sizing*/ 
 *,
 *::after,
@@ -86,7 +85,6 @@ select {
 }
 
 /**************GLOBAL STYLING**************/
-
 p {
   @include mixin.body();
   color: $light-blue;
@@ -96,11 +94,8 @@ p {
 //Desktop sizing: 1440 X 900
 //Tablet: 768 X 1024
 //Mobile: 375 X 667
-//TODO: We will have to change this for each page. How?
+
 main {
-  // background-image: url(../assets/images/home/background-home-desktop.jpg);
-  // background-size: 100% 100%;
-  // background-color: $dark-blue;
   width:100%;
   min-height: 100vh;
   transition: 0.5s ease;
@@ -122,6 +117,19 @@ main {
     z-index: -1;
 }
 
+.page-title {
+  @include mixin.nav();
+  font-size: 1rem;
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
+}
+
+.page-paragraph {
+    font-size: 0.938rem;
+    line-height: 1.5rem;
+}
+
+
 /* ========== TABLET =========== */
 @include mixin.min-media-query($tablet-xs){
   #background {
@@ -131,6 +139,17 @@ main {
         background-repeat: no-repeat;
         min-height: 100vh;
         width: 100%;
+  }
+
+  .page-title {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    letter-spacing: 3.38px;
+  }
+
+  .page-paragraph {
+    font-size: 1rem;
+    line-height: 1.75rem;
   }
 }
 
@@ -144,6 +163,17 @@ main {
     min-height: 100vh;
     top: 0;
     right: 0;
+  }
+
+  .page-title {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    letter-spacing: 4.72px;
+  }
+
+  .page-paragraph {
+    font-size: 1.125rem;
+    line-height: 2rem;
   }
 }
 
