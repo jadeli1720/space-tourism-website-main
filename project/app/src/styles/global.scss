@@ -10,7 +10,7 @@
 {
   box-sizing: border-box;
   @include mixin.body();
-  padding: 0;
+  // overflow: hidden;
 }
 
 /* Remove default margin */
@@ -37,6 +37,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  overflow: hidden !important;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -118,7 +119,6 @@ main {
     background-repeat: no-repeat;
     min-height: 100vh;
     width: 100%;
-    // transform: rotate(0deg);
     z-index: -1;
 }
 
@@ -142,7 +142,6 @@ main {
     background-position: right;
     width: 100%;
     min-height: 100vh;
-    transform: rotate(0);
     top: 0;
     right: 0;
   }

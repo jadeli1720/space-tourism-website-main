@@ -1,17 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { NavLink } from "react-router-dom";
 import logo from "../assets/images/shared/logo.svg";
 import hamburger from '../assets/images/shared/icon-hamburger.svg';
 import closeIcon from '../assets/images/shared/icon-close.svg';
 
 const Header = () => {
+	const [openNav, setOpenNav] = useState(false);	
+	const menuItems = [
+		{ name: 'Home', href: '/', number:'00' },
+		{ name: 'Destination', href: '/destination', number:'01' },
+		{ name: 'Crew', href: '/crew', number:'02' },
+		{ name: 'Technology', href: '/technology', number:'03' },
+	];
 
   const setActiveLink = e => {
     const links = document.getElementsByClassName('link')
     Array.from(links).forEach(el => el.classList.remove('.active'));
     e.target.classList.add('active')
   }
-
 
   return (
 		<>
@@ -22,39 +28,53 @@ const Header = () => {
 							src={logo}
 							alt='Space Travel Logo'
 							title='Travel to Space'
-              className='logo'
+							className='logo'
 						/>
 					</a>
 				</div>
 				<div className='border'></div>
-				<nav className='nav-menu'>
+				<nav className={`nav-menu ${openNav ? 'show' : ''}`}>
 					<ul className='nav-list'>
-						<li className="nav-item" onClick={setActiveLink}>
-							<NavLink to='/' className="link">
-								<span className='nav-number'>00</span>
-								Home
-							</NavLink>
-						</li>
-						<li className="nav-item" onClick={setActiveLink}>
-							<NavLink to='/destination' className="link">
-								<span className='nav-number'>01</span>
-								Destination
-							</NavLink>
-						</li>
-						<li className="nav-item" onClick={setActiveLink}>
-							<NavLink to='/crew' className="link">
-								<span className='nav-number'>02</span>
-								Crew
-							</NavLink>
-						</li>
-						<li className="nav-item" onClick={setActiveLink}>
-							<NavLink to='/technology' className="link">
-								<span className='nav-number'>00</span>
-								Technology
-							</NavLink>
-						</li>
+						{menuItems.map((item, i) => (
+							<li
+								className='nav-item'
+								onClick={setActiveLink}
+								key={i}
+							>
+								<NavLink to={item.href} className='link'>
+									<span className='nav-number'>
+										{item.number}
+									</span>
+									{item.name}
+									<span className='active-border'></span>
+								</NavLink>
+							</li>
+						))}
 					</ul>
 				</nav>
+
+				{/* TODO: can we use the bottom button instead */}
+				{/* <button className='hamburger' onClick={() => console.log("clicked")}>
+						<div />
+						<div />
+						<div />
+					</button> */}
+				<button
+					className='hamburger'
+					onClick={() => setOpenNav(!openNav)}
+				>
+					{openNav === false ? (
+						<img
+							src={hamburger}
+							alt='open navigation menu button'
+						/>
+					) : (
+						<img
+							src={closeIcon}
+							alt='close navigation menu button'
+						/>
+					)}
+				</button>
 			</header>
 		</>
   );

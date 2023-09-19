@@ -1,6 +1,6 @@
 import homeDesktop from '../assets/images/home/background-home-desktop.jpg';
 import homeTablet from '../assets/images/home/background-home-tablet.jpg';
-import homeMobile from '../assets/images/home/background-home-desktop.jpg';
+import homeMobile from '../assets/images/home/background-home-mobile.jpg';
 import destinationDesktop from '../assets/images/destination/background-destination-desktop.jpg';
 import destinationTablet from '../assets/images/destination/background-destination-tablet.jpg';
 import destinationMobile from '../assets/images/destination/background-destination-mobile.jpg';
