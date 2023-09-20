@@ -1,10 +1,10 @@
 
-const Image = ({pngImg, webImg, name}) => {
+const Image = ({pngImg, webPImg, name}) => {
   return (
 		<>
 			<picture>
-				<source srcSet={webImg} type='image/webp' />
-				<img loading='lazy' src={pngImg} alt={name} />
+				{/* <source srcSet={webPImg} type='image/webp' /> */}
+				<img loading='lazy' src={pngImg} alt={name} className="destination-image"/>
 			</picture>
 		</>
   );

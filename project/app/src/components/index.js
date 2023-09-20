@@ -1,3 +1,5 @@
-import Header from './Header';;
+import Header from './Header';
+import Image from "./Image";
+import SubHeading from './SubHeading'
 
-export { Header };
+export { Header, Image, SubHeading };
