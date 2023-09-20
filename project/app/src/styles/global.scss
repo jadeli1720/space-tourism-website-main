@@ -36,7 +36,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  overflow: hidden !important;
+  // overflow: hidden !important;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -102,7 +102,7 @@ main {
   width:100%;
   min-height: 100vh;
   transition: 0.5s ease;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 /* ========== MOBILE =========== */
@@ -132,18 +132,31 @@ main {
     line-height: 1.5rem;
 }
 
-  #destinationPage, #crewPage, #technologyPage {
-  .page-title {
-      @include mixin.displayFlex(row, center, unset);
-      color: white;
+#destinationPage, #crewPage, #technologyPage {
+  margin-top: 1.5rem;
 
-      .page-title-number{
-        color: rgba(255, 255, 255, 0.25);
-        font-weight: bold;
-        margin-right: 1rem;
-      }
+  .page-title {
+    @include mixin.displayFlex(row, center, unset);
+    color: white;
+
+    .page-title-number{
+      color: rgba(255, 255, 255, 0.25);
+      font-weight: bold;
+      margin-right: 1rem;
     }
   }
+
+  .img-wrapper {
+    margin: 1.5rem auto 0;
+  }
+}
+
+.divider {
+    margin: 20px 0;
+    color: #383B4B;
+    height: 1px;
+    width: 85%;
+}
 
 
 /* ========== TABLET =========== */

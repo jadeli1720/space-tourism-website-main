@@ -7,6 +7,7 @@ import { navItems } from "../data/utils";
 
 const Header = () => {
 	const [openNav, setOpenNav] = useState(false);	
+	//TODO: is there a way to tell what location we are at to set the active class. Would like to add inline class if statement
 
   const setActiveLink = e => {
     const links = document.getElementsByClassName('link')

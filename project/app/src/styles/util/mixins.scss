@@ -53,7 +53,7 @@
 //14px
 @mixin subHeadingTwo($line-height) {
   font-family: 'Bellefair', serif;
-  font-size: 0.875rem;
+  font-size: 0.875rem !important;
   font-weight: 400;
   line-height: $line-height;
   letter-spacing: 0.147rem;

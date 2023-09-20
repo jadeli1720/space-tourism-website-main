@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import changeBackground from '../components/background';
 import data from '../data/data.json';
 import { Image, SubHeading } from '../components';
@@ -16,29 +16,26 @@ const Destination = () => {
 		travel: celestialBodies[0].travel,
 	});
 
-	// console.log('Checking data', celestialBodies[0].images.png);
+	// console.log(destinationData)
+
 
 	const changeDestinationData = (item) =>{
-		console.log("clicked", item)
 		setDestinationData({
 			id: item.id,
 			name: item.name,
-			pngImg: item.pngImg,
-			webPImg: item.webPImg,
+			pngImg: item.images.png,
+			webPImg: item.images.webp,
 			description: item.description,
 			distance: item.distance,
-			travel: item.travel
-		})
+			travel: item.travel,
+		});
 	}
 
 	return (
 		<div id='destinationPage'>
 			<section className='destination-left-container'>
 				<SubHeading number='1' heading='Pick Your Destination' />
-				{/* Not working for some reason. Not sure why */}
-				<div className='img-wrapper' >
-					{/* git original image size? */}
-					{/* <img src={destinationData.pngImg} alt=""  /> */}
+				<div className='img-wrapper'>
 					<Image
 						pngImg={destinationData.pngImg}
 						webPImg={destinationData.webPImg}
@@ -48,28 +45,34 @@ const Destination = () => {
 			</section>
 			<section className='destination-right-container'>
 				<div className='destination-nav-wrapper'>
-					<div>
-						{celestialBodies.map((item) => {
-							return (
-								<div
-									key={item.id}
-									className='destination-nav-link'
-									id={item.name.toLowerCase()}
-									onClick={() => changeDestinationData(item)}
-								>
-									{item.name}
-								</div>
-							);
-						})}
-					</div>
+					{celestialBodies.map((item) => {
+						return (
+							<div
+								key={item.id}
+								className={`destination-link ${
+									item.name === destinationData.name
+										? 'active'
+										: ''
+								}`}
+								id={item.name.toLowerCase()}
+								onClick={() => changeDestinationData(item)}
+							>
+								{item.name}
+							</div>
+						);
+					})}
 				</div>
-				<h1 className='celestial-bodies-title'>{destinationData.name}</h1>
-				<p className='page-paragraph'></p>
-				<hr/>
+				<h1 className='celestial-bodies-title'>
+					{destinationData.name}
+				</h1>
+				<p className='page-paragraph'>{destinationData.description}</p>
+				<hr className='divider' />
 				<div className='stats-container'>
 					<div className='distance-wrapper'>
 						<p className='distance-title'>avg. distance</p>
-						<p className='distance-stat'>{destinationData.distance}</p>
+						<p className='distance-stat'>
+							{destinationData.distance}
+						</p>
 					</div>
 					<div className='travel-wrapper'>
 						<p className='travel-title'>est. travel time</p>

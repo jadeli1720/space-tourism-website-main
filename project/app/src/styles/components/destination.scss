@@ -4,16 +4,63 @@
 #destinationPage{
   @include mixin.displayFlex(column, center, unset);
 
+  .destination-left-container, .destination-right-container {
+    @include mixin.displayFlex(column, center, unset);
+    max-width: 573px;
+    width: 100%
+  }
+  
+
   .img-wrapper {
-    border: deeppink 1px solid;
-    margin: 0 auto;
+    
     height: 170px;
     width:170px;
 
     .destination-image{
       height: 170px;
-    width:170px;
+      width:170px;
     }
+  }
+
+  .destination-nav-wrapper {
+    @include mixin.displayFlex(row, flex-start, space-between);
+    height: 28px;
+    margin-top: 2rem;
+    max-width: 285.5px;
+    width: 60.5%;
+
+  }
+
+  .destination-link {
+    @include mixin.nav();
+    color: $light-blue;
+    font-size: 0.875rem !important;
+    line-height: 0.875rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding-bottom: 9px;
+
+    &:hover {
+      border-bottom: 3px solid rgba(255, 255, 255, 0.50);
+    }
+  }
+
+  .destination-link.active {
+    color:white;
+    border-bottom: 3px solid white;
+  }
+
+  .celestial-bodies-title {
+    color: white;
+    @include mixin.headingThree(3.5rem);
+    text-transform: uppercase;
+    margin: 2rem 0 1rem;
+  }
+
+  .page-paragraph {
+    line-height: 25px;
+    text-align: center;
+    width: 82%;
   }
 }
 
