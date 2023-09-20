@@ -132,6 +132,19 @@ main {
     line-height: 1.5rem;
 }
 
+  #destinationPage, #crewPage, #technologyPage {
+  .page-title {
+      @include mixin.displayFlex(row, center, unset);
+      color: white;
+
+      .page-title-number{
+        color: rgba(255, 255, 255, 0.25);
+        font-weight: bold;
+        margin-right: 1rem;
+      }
+    }
+  }
+
 
 /* ========== TABLET =========== */
 @include mixin.min-media-query($tablet-xs){
@@ -154,6 +167,8 @@ main {
     font-size: 1rem;
     line-height: 1.75rem;
   }
+
+
 }
 
 /* ========== DESKTOP =========== */

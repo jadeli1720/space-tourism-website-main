@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import changeBackground from '../components/background';
 import data from '../data/data.json';
 import { Image, SubHeading } from '../components';
-import {Moon} from '../assets/images/destination/image-moon.png'
 
 const Destination = () => {
 	window.onload = changeBackground('destinationPage');
@@ -17,8 +15,6 @@ const Destination = () => {
 		distance: celestialBodies[0].distance,
 		travel: celestialBodies[0].travel,
 	});
-
-	const navigate = useNavigate();
 
 	// console.log('Checking data', celestialBodies[0].images.png);
 
@@ -40,11 +36,15 @@ const Destination = () => {
 			<section className='destination-left-container'>
 				<SubHeading number='1' heading='Pick Your Destination' />
 				{/* Not working for some reason. Not sure why */}
-				<Image
-					pngImg={destinationData.pngImg}
-					webPImg={destinationData.webPImg}
-					name={destinationData.name}
-				/>
+				<div className='img-wrapper' >
+					{/* git original image size? */}
+					{/* <img src={destinationData.pngImg} alt=""  /> */}
+					<Image
+						pngImg={destinationData.pngImg}
+						webPImg={destinationData.webPImg}
+						name={destinationData.name}
+					/>
+				</div>
 			</section>
 			<section className='destination-right-container'>
 				<div className='destination-nav-wrapper'>

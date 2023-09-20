@@ -1,7 +1,24 @@
 @use '../util/mixins.scss' as mixin;
 
 /* ========== MOBILE =========== */
+#destinationPage{
+  @include mixin.displayFlex(column, center, unset);
+
+  .img-wrapper {
+    border: deeppink 1px solid;
+    margin: 0 auto;
+    height: 170px;
+    width:170px;
+
+    .destination-image{
+      height: 170px;
+    width:170px;
+    }
+  }
+}
 
 /* ========== TABLET =========== */
+@include mixin.min-media-query($tablet-xs){}
 
 /* ========== DESKTOP =========== */
+@include mixin.min-media-query($desktop-sm){}
