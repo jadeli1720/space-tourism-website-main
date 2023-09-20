@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { Header } from './components/index'
 import {
-	Header,
 	Homepage,
 	Crew,
 	Destination,
 	Technology,
-} from './components/index';
+} from './pages/index';
 
 
 function App() {

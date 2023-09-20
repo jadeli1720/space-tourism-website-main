@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import changeBackground from './background';
+import changeBackground from '../components/background';
 import { navItems } from '../data/utils';
 
 const Homepage = () => {
