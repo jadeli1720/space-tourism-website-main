@@ -1,7 +1,7 @@
-import Header from './header';
-import Homepage from './homepage';
-import Destination from "./destination";
-import Crew from './crew';
-import Technology from './technology';
+import Header from './Header';
+import Homepage from './Homepage';
+import Destination from "./Destination";
+import Crew from './Crew';
+import Technology from './Technology';
 
 export { Header,  Homepage, Crew, Destination, Technology };
