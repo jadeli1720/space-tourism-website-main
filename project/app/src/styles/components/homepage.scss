@@ -4,8 +4,14 @@
 #homepage {
   @include mixin.displayFlex(column, center, unset);
   text-align: center;
-  height: 100vh;
   margin: 40px 1.5rem 0;
+  height: 100vh;
+  
+  
+  .hp-text-container {
+    max-width: 450px;
+    width: 100%;
+  }
   
   .page-title{
     color: $light-blue;
@@ -24,35 +30,89 @@
     text-align: center;
   }
 
-  .explore-btn {
-    margin-top: 88px ;
-
-    .container {
-      @include mixin.displayFlex(row, center, center);
-      cursor: pointer;
-      background-color: white;
-      border-radius: 50%;
-      height: 150px;
-      width: 150px;
-
-    }
-
-    a {
+  .explore-btn-wrapper {
+    @include mixin.displayFlex(row, center, center);
+    margin-top: 5.5rem;
+    
+    button {
       @include mixin.subHeadingOne(unset);
+      background-color: white;
+      border: none;
+      border-radius: 50%;
       color: $dark-blue;
+      cursor: pointer;
       font-size: 20px;
       line-height: 20px !important;
       letter-spacing: 1.25px;
-      text-decoration: none;
       text-transform: uppercase;
-      //Cheat to center the text
-      margin-top: 4px;
+      height: 150px;
+      width: 150px;
       transition: 0.4s ease-in-out;
+      
     }
   }
 }
 
 
 /* ========== TABLET =========== */
+@include mixin.min-media-query($tablet-xs) {
+  #homepage {
+    margin-top: 6.25rem;
+
+    .hp-text-container{
+      width: 61%;
+    }
+
+    h1 {
+      @include mixin.headingOne(9.375rem);
+      margin: 2rem 0;
+    }
+
+    .explore-btn-wrapper{
+      margin-top: 9.125rem;
+      
+      button {
+        @include mixin.headingFour(2rem);
+        height: 15.125rem;
+        width: 15.125rem;
+      }
+    }
+  }
+}    
 
 /* ========== DESKTOP =========== */
+
+@include mixin.min-media-query($desktop-sm) {
+  #homepage {
+    flex-direction: row;
+    justify-content: space-between;
+    
+    margin: 250px auto 0;
+    height: unset;
+    max-width: 1158px;
+    width: 100%;
+
+    .hp-text-container {
+      width: 100%;
+    }
+
+    .page-title, .page-paragraph {
+      text-align: left;
+    }
+
+    .explore-btn-wrapper {
+      border-radius: 50%;
+      margin-top: 98px;
+      
+      button{
+        height: 17.125rem;
+        width: 17.125rem;
+
+        &:hover {
+          box-shadow: 0px 0px 0px 100px rgba(255, 255, 255, 0.12);
+        }
+      }
+    }
+  }
+}
+

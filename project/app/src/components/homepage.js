@@ -1,10 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import changeBackground from './background';
 import { navItems } from '../data/utils';
 
 const Homepage = () => {
 	window.addEventListener('load', changeBackground('homepage'))
+
+	const navigate = useNavigate();
+
+	const exploreBtnNavigation = e => {
+		navigate(navItems[1].href);
+	}
 
 	return (
 		<div id='homepage'>
@@ -18,10 +24,9 @@ const Homepage = () => {
 					a truly out of this world experience!
 				</p>
 			</section>
-			<section className='explore-btn'>
-				<div className='container'>
-					<Link to={navItems[1].href}>Explore</Link>
-				</div>
+			{/* This needs to change to button with a click handler to destination page */}
+			<section className='explore-btn-wrapper'>
+				<button onClick={exploreBtnNavigation}>Explore</button>
 			</section>
 		</div>
 	);
