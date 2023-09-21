@@ -6,27 +6,27 @@
 
   .destination-left-container, .destination-right-container {
     @include mixin.displayFlex(column, center, unset);
-    max-width: 573px;
+    max-width: 35.813rem;
     width: 100%
   }
   
 
   .img-wrapper {
     
-    height: 170px;
-    width:170px;
+    height: 10.625rem;
+    width:10.625rem;
 
     .destination-image{
-      height: 170px;
-      width:170px;
+      height: 10.625rem;
+      width:10.625rem;
     }
   }
 
   .destination-nav-wrapper {
     @include mixin.displayFlex(row, flex-start, space-between);
-    height: 28px;
+    height: 1.75rem;
     margin-top: 2rem;
-    max-width: 285.5px;
+    max-width: 17.844rem;
     width: 60.5%;
 
   }
@@ -38,7 +38,7 @@
     line-height: 0.875rem;
     text-transform: uppercase;
     cursor: pointer;
-    padding-bottom: 9px;
+    padding-bottom: 0.563rem;
 
     &:hover {
       border-bottom: 3px solid rgba(255, 255, 255, 0.50);
@@ -58,9 +58,41 @@
   }
 
   .page-paragraph {
-    line-height: 25px;
+    line-height: 1.563rem;
     text-align: center;
+    margin-bottom: 1rem;
     width: 82%;
+  }
+
+  .stats-container{
+    @include mixin.displayFlex(column, center,unset);
+    margin-bottom: 2.5rem;
+
+    .distance-wrapper, .travel-wrapper {
+      @include mixin.displayFlex(column, center,unset);
+      
+    }
+
+    .distance-wrapper {
+      margin: 0.5rem 0 1rem;
+    }
+
+    .travel-wrapper {
+      margin: 1rem 0; 
+    }
+
+    .title {
+      @include mixin.nav();
+      letter-spacing: 0.148rem;
+      text-transform: uppercase;
+    }
+
+    .stat {
+      color: white;
+      @include mixin.subHeadingOne(2rem);
+      text-transform: uppercase;
+      margin-top: 0.35rem;
+    }
   }
 }
 

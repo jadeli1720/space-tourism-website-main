@@ -128,7 +128,7 @@ body {
 }
 
 #destinationPage, #crewPage, #technologyPage {
-  margin-top: 1.5rem;
+  margin-top: 1.25rem;
 
   .page-title {
     @include mixin.displayFlex(row, center, unset);
@@ -148,7 +148,7 @@ body {
 
 .divider {
     margin: 20px 0;
-    color: #383B4B;
+    background-color: #383B4B;
     height: 1px;
     width: 85%;
 }

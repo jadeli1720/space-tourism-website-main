@@ -66,17 +66,17 @@ const Destination = () => {
 					{destinationData.name}
 				</h1>
 				<p className='page-paragraph'>{destinationData.description}</p>
-				<hr className='divider' />
+				<div className='divider' ></div>
 				<div className='stats-container'>
 					<div className='distance-wrapper'>
-						<p className='distance-title'>avg. distance</p>
-						<p className='distance-stat'>
+						<p className='title'>avg. distance</p>
+						<p className='stat'>
 							{destinationData.distance}
 						</p>
 					</div>
 					<div className='travel-wrapper'>
-						<p className='travel-title'>est. travel time</p>
-						<p className='travel-stat'>{destinationData.travel}</p>
+						<p className='title'>est. travel time</p>
+						<p className='stat'>{destinationData.travel}</p>
 					</div>
 				</div>
 			</section>
