@@ -1,7 +1,7 @@
 @use '../util/mixins.scss' as mixin;
 
 /* ========== MOBILE =========== */
-#destinationPage{
+#destinationPage {
   @include mixin.displayFlex(column, center, unset);
 
   .destination-left-container, .destination-right-container {
@@ -10,9 +10,7 @@
     width: 100%
   }
   
-
   .img-wrapper {
-    
     height: 10.625rem;
     width:10.625rem;
 
@@ -28,7 +26,6 @@
     margin-top: 2rem;
     max-width: 17.844rem;
     width: 60.5%;
-
   }
 
   .destination-link {
@@ -70,7 +67,6 @@
 
     .distance-wrapper, .travel-wrapper {
       @include mixin.displayFlex(column, center,unset);
-      
     }
 
     .distance-wrapper {
@@ -97,7 +93,50 @@
 }
 
 /* ========== TABLET =========== */
-@include mixin.min-media-query($tablet-xs){}
+@include mixin.min-media-query($tablet-xs){
+  #destinationPage {
+
+    .img-wrapper {
+      margin: 5rem auto 0;
+      height: 18.75rem;
+      width:18.75rem;
+
+    .destination-image{
+      height: 18.75rem;
+      width:18.75rem;
+    }
+    }
+
+    .destination-nav-wrapper {
+      margin-top: 3.5rem;
+
+      .destination-link {
+        font-size: 1rem !important;
+        letter-spacing: 2.7px;
+      }
+    }
+
+    .celestial-bodies-title{
+      font-size: 80px;
+      line-height: 82px;
+    }
+
+    .page-paragraph {
+      margin-bottom: 2.25rem;
+      width: 100%;
+    }
+
+    .stats-container {
+      @include mixin.displayFlex(row, center, space-evenly);
+      margin: 0.75rem 0 2.5rem;
+      width: 100%;
+
+      .distance-wrapper, .travel-wrapper{
+        margin: 0;
+      }
+    }
+  }
+}
 
 /* ========== DESKTOP =========== */
 @include mixin.min-media-query($desktop-sm){}

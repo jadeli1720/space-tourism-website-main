@@ -33,9 +33,9 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
-  min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  max-height: 100vh;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -99,14 +99,15 @@ p {
 main {
   //need to work on this for bigger screen sizes. Placement and max width sizes
   // max-width: 1680px;
-  width:100%;
   min-height: 100vh;
+  width:100%;
   transition: 0.5s ease;
   overflow: hidden;
 }
 
 /* ========== MOBILE =========== */
 body {
+  
   background-attachment: fixed;
   background-color: $dark-blue;
   background-image: var(--background-mobile);
@@ -128,7 +129,7 @@ body {
 }
 
 #destinationPage, #crewPage, #technologyPage {
-  margin-top: 1.25rem;
+  margin-top: 2.25rem;
 
   .page-title {
     @include mixin.displayFlex(row, center, unset);
@@ -147,7 +148,7 @@ body {
 }
 
 .divider {
-    margin: 20px 0;
+    margin: 1.25rem 0;
     background-color: #383B4B;
     height: 1px;
     width: 85%;
@@ -160,18 +161,23 @@ body {
     background-image: var(--background-tablet)
   }
 
-  .page-title {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    letter-spacing: 3.38px;
-  }
-
   .page-paragraph {
     font-size: 1rem;
     line-height: 1.75rem;
   }
 
+  #destinationPage, #crewPage, #technologyPage {
+    margin-top: 1.5rem;
 
+    .page-title {
+      position: absolute;
+      left: 39px;
+    }
+  }
+
+  .divider {
+    width: 100%;
+  }
 }
 
 /* ========== DESKTOP =========== */
