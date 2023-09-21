@@ -116,6 +116,10 @@ body {
   background-repeat: no-repeat
 }
 
+.page-title, .page-paragraph {
+  text-align: center;
+}
+
 .page-title {
   @include mixin.nav();
   font-size: 1rem;
@@ -169,9 +173,13 @@ body {
   #destinationPage, #crewPage, #technologyPage {
     margin-top: 1.5rem;
 
+    .page-title-number{
+      @include mixin.headingFive(1.75rem);
+    }
+
     .page-title {
       position: absolute;
-      left: 39px;
+      left: 2.438rem;
     }
   }
 
@@ -186,15 +194,34 @@ body {
     background-image: var(--background-desktop);
   }
 
+  .page-title, .page-paragraph {
+    text-align: left;
+  }
+
   .page-title {
     font-size: 1.75rem;
     line-height: 2.25rem;
     letter-spacing: 4.72px;
+
+    .page-title-number {
+          margin-right: 2rem;
+    }
   }
 
   .page-paragraph {
     font-size: 1.125rem;
     line-height: 2rem;
+  }
+
+  #destinationPage, #crewPage, #technologyPage {
+    margin: 4.25rem auto 0;
+    // Will we need to move this to mobile and change percentages as we go?
+    max-width: 75rem;
+
+    .page-title {
+      position: relative;
+      left: 0;
+    }
   }
 }
 

@@ -24,10 +24,6 @@
     margin: 0.75rem 0;
   }
 
-  .page-paragraph {
-    text-align: center;
-  }
-
   .explore-btn-wrapper {
     @include mixin.displayFlex(row, center, center);
     margin-top: 5.5rem;
@@ -92,10 +88,6 @@
 
     .hp-text-container {
       width: 100%;
-    }
-
-    .page-title, .page-paragraph {
-      text-align: left;
     }
 
     .explore-btn-wrapper {

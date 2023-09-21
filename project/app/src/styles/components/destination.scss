@@ -55,13 +55,11 @@
   }
 
   .page-paragraph {
-    line-height: 1.563rem;
-    text-align: center;
     margin-bottom: 1rem;
     width: 82%;
   }
 
-  .stats-container{
+  .stats-container {
     @include mixin.displayFlex(column, center,unset);
     margin-bottom: 2.5rem;
 
@@ -95,16 +93,15 @@
 /* ========== TABLET =========== */
 @include mixin.min-media-query($tablet-xs){
   #destinationPage {
-
     .img-wrapper {
       margin: 5rem auto 0;
       height: 18.75rem;
       width:18.75rem;
 
-    .destination-image{
-      height: 18.75rem;
-      width:18.75rem;
-    }
+      .destination-image {
+        height: 18.75rem;
+        width:18.75rem;
+      }
     }
 
     .destination-nav-wrapper {
@@ -117,8 +114,8 @@
     }
 
     .celestial-bodies-title{
-      font-size: 80px;
-      line-height: 82px;
+      font-size: 5rem;
+      line-height: 5.125rem;
     }
 
     .page-paragraph {
@@ -139,4 +136,65 @@
 }
 
 /* ========== DESKTOP =========== */
-@include mixin.min-media-query($desktop-sm){}
+@include mixin.min-media-query($desktop-sm){
+  #destinationPage {
+    @include mixin.displayFlex(row, center, unset);
+
+    .destination-left-container, .destination-right-container {
+      @include mixin.displayFlex(column, flex-start, unset);
+    }
+
+    .destination-left-container {
+      margin-right: 15rem;
+      max-width: 31.813rem;
+    }
+
+    .destination-link {
+      padding-bottom: 1rem;
+    }
+    
+    .destination-right-container {
+      margin-top: 2.5rem;
+      max-width: 27.813rem;
+    }
+
+    .img-wrapper {
+      margin: 6.375rem 0 0 3.875rem;
+      height: 27.813rem;
+      width: 27.813rem;
+
+      .destination-image{
+        height: 27.813rem;
+        width: 27.813rem;
+      }
+    }
+
+    .destination-nav-wrapper{
+      margin-top: 0;
+      height: 2.125rem;
+      width: 100%;
+    }
+
+    .celestial-bodies-title {
+      @include mixin.headingTwo(6.25rem);
+          margin: 2.875rem 0 1.5rem;
+    }
+
+    .stats-container  {
+      justify-content: flex-start;
+      margin-bottom: 0;
+
+      .distance-wrapper, .travel-wrapper {
+        align-items: flex-start;
+      }
+
+      .distance-wrapper{
+        margin-right: 4.25rem;
+      }
+
+      .stat {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}
