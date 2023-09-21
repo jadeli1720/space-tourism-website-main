@@ -36,7 +36,6 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  // overflow: hidden !important;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -44,6 +43,7 @@ ul[role='list'],
 ol[role='list'], li {
   list-style: none;
 }
+
 a {
   text-align: none;
 }
@@ -102,22 +102,17 @@ main {
   width:100%;
   min-height: 100vh;
   transition: 0.5s ease;
-  // overflow: hidden;
+  overflow: hidden;
 }
 
 /* ========== MOBILE =========== */
-#background {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background-color: $dark-blue;
-    background-image: var(--background-mobile);
-    background-size: cover;
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    width: 100%;
-    z-index: -1;
+body {
+  background-attachment: fixed;
+  background-color: $dark-blue;
+  background-image: var(--background-mobile);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat
 }
 
 .page-title {
@@ -161,13 +156,8 @@ main {
 
 /* ========== TABLET =========== */
 @include mixin.min-media-query($tablet-xs){
-  #background {
-    background-image: var(--background-tablet);
-        background-size: 100% 100vh;
-        background-position: center bottom;
-        background-repeat: no-repeat;
-        min-height: 100vh;
-        width: 100%;
+  body {
+    background-image: var(--background-tablet)
   }
 
   .page-title {
@@ -186,14 +176,8 @@ main {
 
 /* ========== DESKTOP =========== */
 @include mixin.min-media-query($desktop-sm){
-  #background {
+  body {
     background-image: var(--background-desktop);
-    background-size: cover;
-    background-position: right;
-    width: 100%;
-    min-height: 100vh;
-    top: 0;
-    right: 0;
   }
 
   .page-title {
