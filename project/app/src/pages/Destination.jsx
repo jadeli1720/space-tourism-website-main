@@ -17,8 +17,7 @@ const Destination = () => {
 	});
 
 	// console.log(destinationData)
-
-
+	
 	const changeDestinationData = (item) =>{
 		setDestinationData({
 			id: item.id,
@@ -40,6 +39,7 @@ const Destination = () => {
 						pngImg={destinationData.pngImg}
 						webPImg={destinationData.webPImg}
 						name={destinationData.name}
+						page='destination'
 					/>
 				</div>
 			</section>

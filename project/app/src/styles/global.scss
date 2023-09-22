@@ -133,7 +133,7 @@ body {
 }
 
 #destinationPage, #crewPage, #technologyPage {
-  margin-top: 2.25rem;
+  margin-top: 1.125rem;
 
   .page-title {
     @include mixin.displayFlex(row, center, unset);

@@ -1,6 +1,84 @@
 @use '../util/mixins.scss' as mixin;
 
 /* ========== MOBILE =========== */
+#crewPage{
+  @include mixin.displayFlex(column, center, unset);
+  .page-title {
+    order: 1;
+  }
+
+  #backgroundOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(11, 13, 23, 0.507);
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+  }
+  
+  .crew-text-data, .crew-nav-wrapper, .image-wrapper {
+    max-width: 488px;
+    width: 86.75%;
+  }
+
+  .crew-text-data {
+    order: 4;
+    h1, h2{
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      color: rgba(255, 255, 255, 0.5);
+      @include mixin.subHeadingTwo(1rem);
+    }
+
+    h1 {
+      color: white;
+      @include mixin.subHeadingOne(1.5rem);
+      margin: 1rem 0 1.5rem;
+    }
+  }
+
+  .crew-nav-wrapper {
+    order: 3;
+    @include mixin.displayFlex(row, center, space-between);
+    margin: 1.5rem 0 2rem;
+    height: 10px;
+    width: 88px;
+
+    .crew-link {
+      background-color: rgba(255, 255, 255, 0.17);
+      border-radius: 50%;
+      height: 10px;
+      width: 10px;
+
+      &:hover {
+        background-color: white;
+      }
+    }
+
+    .crew-link.active{
+      background-color: white;
+    }
+  }
+
+  .image-wrapper{
+    order: 2;
+    @include mixin.displayFlex(column, center, unset);
+
+    .crew-image {
+      margin: 1.5rem auto 0;
+      height: 222px;
+    }
+
+    .divider {
+      margin: 0;
+      width: 327px;
+    }
+  }
+}
 
 /* ========== TABLET =========== */
 

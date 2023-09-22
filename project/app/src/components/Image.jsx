@@ -1,12 +1,13 @@
 
-const Image = ({pngImg, webPImg, name}) => {
+const Image = ({pngImg, webPImg, name, page}) => {
 
+	// TODO: may want to add height and width of @each image to data.json image{} and then pass it through props. 
 	
   return (
 		<>
 			<picture>
 				<source srcSet={webPImg} type='image/webp' />
-				<img src={pngImg} alt={name} className="destination-image"/>
+				<img loading="lazy" src={pngImg} alt={name} className={`${page}-image`}/>
 			</picture>
 		</>
   );
