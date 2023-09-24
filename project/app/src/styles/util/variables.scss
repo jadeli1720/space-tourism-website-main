@@ -1,0 +1,36 @@
+/**************BACKGROUND**************/
+:root{
+    --background-mobile: "";
+    --background-tablet: "";
+    --background-desktop: "";
+}
+
+/**************COLORS**************/
+$light-blue: #D0D6F9;
+$dark-blue: #0B0D17;
+
+/**************SCREEN SIZES**************/
+//390px
+$mobile-sm: 24.375rem;
+//428px
+$mobile-md: 26.75rem;
+//600px
+$mobile-lg: 37.5rem;
+//768px
+$tablet-xs: 48rem;
+//925
+$tablet-sm: 57.8125rem;
+//1024px
+$tablet-md: 64rem;
+//1280px
+$tablet-lg: 80rem;
+//1366px
+$desktop-sm: 85.375rem;
+//1440px
+$desktop-md: 90rem;
+//1680px
+$desktop-lg: 105rem;
+//1920px
+$desktop-xl: 120rem;
+//2560px
+$desktop-xxl: 160rem;

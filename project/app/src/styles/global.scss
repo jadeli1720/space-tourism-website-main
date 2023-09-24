@@ -1,0 +1,228 @@
+@use './util/mixins.scss' as mixin;
+
+
+/**************GLOBAL RESETS**************/
+/*Box Sizing*/ 
+*,
+*::after,
+*::before
+{
+  box-sizing: border-box;
+  @include mixin.body();
+  // overflow: hidden;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  max-height: 100vh;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'], li {
+  list-style: none;
+}
+
+a {
+  text-align: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/**************GLOBAL STYLING**************/
+p {
+  @include mixin.body();
+  color: $light-blue;
+}
+
+//TODO: The image isn't working on responsive sizes
+//Desktop sizing: 1440 X 900
+//Tablet: 768 X 1024
+//Mobile: 375 X 667
+//Create container class that will focus on each page contents width for viewports at 1366px and in between
+
+main {
+  //need to work on this for bigger screen sizes. Placement and max width sizes
+  // max-width: 1680px;
+  min-height: 100vh;
+  width:100%;
+  transition: 0.5s ease;
+  overflow: hidden;
+}
+
+/* ========== MOBILE =========== */
+body {
+  
+  background-attachment: fixed;
+  background-color: $dark-blue;
+  background-image: var(--background-mobile);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat
+}
+
+.page-title, .page-paragraph {
+  text-align: center;
+}
+
+.page-title {
+  @include mixin.nav();
+  font-size: 1rem;
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
+}
+
+.page-paragraph {
+    font-size: 0.938rem;
+    line-height: 1.5rem;
+}
+
+#destinationPage, #crewPage, #technologyPage {
+  margin-top: 1.125rem;
+
+  .page-title {
+    @include mixin.displayFlex(row, center, unset);
+    color: white;
+    font-size: 1rem;
+
+    .page-title-number{
+      color: rgba(255, 255, 255, 0.25);
+      font-weight: bold;
+      margin-right: 1rem;
+    }
+  }
+
+  .img-wrapper {
+    margin: 1.5rem auto 0;
+  }
+}
+
+.divider {
+    margin: 1.25rem 0;
+    background-color: #383B4B;
+    height: 1px;
+    width: 85%;
+}
+
+
+/* ========== TABLET =========== */
+@include mixin.min-media-query($tablet-xs){
+  body {
+    background-image: var(--background-tablet)
+  }
+
+  .page-paragraph {
+    font-size: 1rem;
+    line-height: 1.75rem;
+  }
+
+  #destinationPage, #crewPage, #technologyPage {
+    margin-top: 1.5rem;
+
+    .page-title {
+      position: absolute;
+      left: 2.438rem;
+      font-size: 1.25rem !important;
+      .page-title-number {
+        font-size: 1.25rem !important;
+      }
+    }
+  }
+
+  .divider {
+    width: 100%;
+  }
+}
+
+/* ========== DESKTOP =========== */
+@include mixin.min-media-query($desktop-sm){
+  body {
+    background-image: var(--background-desktop);
+  }
+
+  .page-title, .page-paragraph {
+    text-align: left;
+  }
+
+  .page-title {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    letter-spacing: 4.72px;
+
+    .page-title-number {
+          margin-right: 2rem;
+    }
+  }
+
+  .page-paragraph {
+    font-size: 1.125rem;
+    line-height: 2rem;
+  }
+
+  #destinationPage, #crewPage, #technologyPage {
+    margin: 4.25rem auto 0;
+    // Will we need to move this to mobile and change percentages as we go?
+    max-width: 75rem;
+
+    .page-title {
+      position: relative;
+      left: 0;
+    }
+  }
+}
+

@@ -1,0 +1,200 @@
+@use '../util/mixins.scss' as mixin;
+
+/* ========== MOBILE =========== */
+#destinationPage {
+  @include mixin.displayFlex(column, center, unset);
+
+  .destination-left-container, .destination-right-container {
+    @include mixin.displayFlex(column, center, unset);
+    max-width: 35.813rem;
+    width: 100%
+  }
+  
+  .img-wrapper {
+    height: 10.625rem;
+    width:10.625rem;
+
+    .destination-image{
+      height: 10.625rem;
+      width:10.625rem;
+    }
+  }
+
+  .destination-nav-wrapper {
+    @include mixin.displayFlex(row, flex-start, space-between);
+    height: 1.75rem;
+    margin-top: 2rem;
+    max-width: 17.844rem;
+    width: 60.5%;
+  }
+
+  .destination-link {
+    @include mixin.nav();
+    color: $light-blue;
+    font-size: 0.875rem !important;
+    line-height: 0.875rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding-bottom: 0.563rem;
+
+    &:hover {
+      border-bottom: 3px solid rgba(255, 255, 255, 0.50);
+    }
+  }
+
+  .destination-link.active {
+    color:white;
+    border-bottom: 3px solid white;
+  }
+
+  .celestial-bodies-title {
+    color: white;
+    @include mixin.headingThree(3.5rem);
+    text-transform: uppercase;
+    margin: 2rem 0 1rem;
+  }
+
+  .page-paragraph {
+    margin-bottom: 1rem;
+    width: 82%;
+  }
+
+  .stats-container {
+    @include mixin.displayFlex(column, center,unset);
+    margin-bottom: 2.5rem;
+
+    .distance-wrapper, .travel-wrapper {
+      @include mixin.displayFlex(column, center,unset);
+    }
+
+    .distance-wrapper {
+      margin: 0.5rem 0 1rem;
+    }
+
+    .travel-wrapper {
+      margin: 1rem 0; 
+    }
+
+    .title {
+      @include mixin.nav();
+      letter-spacing: 0.148rem;
+      text-transform: uppercase;
+    }
+
+    .stat {
+      color: white;
+      @include mixin.subHeadingOne(2rem);
+      text-transform: uppercase;
+      margin-top: 0.35rem;
+    }
+  }
+}
+
+/* ========== TABLET =========== */
+@include mixin.min-media-query($tablet-xs){
+  #destinationPage {
+    .img-wrapper {
+      margin: 5rem auto 0;
+      height: 18.75rem;
+      width:18.75rem;
+
+      .destination-image {
+        height: 18.75rem;
+        width:18.75rem;
+      }
+    }
+
+    .destination-nav-wrapper {
+      margin-top: 3.5rem;
+
+      .destination-link {
+        font-size: 1rem !important;
+        letter-spacing: 2.7px;
+      }
+    }
+
+    .celestial-bodies-title{
+      font-size: 5rem;
+      line-height: 5.125rem;
+    }
+
+    .page-paragraph {
+      margin-bottom: 2.25rem;
+      width: 100%;
+    }
+
+    .stats-container {
+      @include mixin.displayFlex(row, center, space-evenly);
+      margin: 0.75rem 0 2.5rem;
+      width: 100%;
+
+      .distance-wrapper, .travel-wrapper{
+        margin: 0;
+      }
+    }
+  }
+}
+
+/* ========== DESKTOP =========== */
+@include mixin.min-media-query($desktop-sm){
+  #destinationPage {
+    @include mixin.displayFlex(row, center, unset);
+
+    .destination-left-container, .destination-right-container {
+      @include mixin.displayFlex(column, flex-start, unset);
+    }
+
+    .destination-left-container {
+      margin-right: 15rem;
+      max-width: 31.813rem;
+    }
+
+    .destination-link {
+      padding-bottom: 1rem;
+    }
+    
+    .destination-right-container {
+      margin-top: 2.5rem;
+      max-width: 27.813rem;
+    }
+
+    .img-wrapper {
+      margin: 6.375rem 0 0 3.875rem;
+      height: 27.813rem;
+      width: 27.813rem;
+
+      .destination-image{
+        height: 27.813rem;
+        width: 27.813rem;
+      }
+    }
+
+    .destination-nav-wrapper{
+      margin-top: 0;
+      height: 2.125rem;
+      width: 100%;
+    }
+
+    .celestial-bodies-title {
+      @include mixin.headingTwo(6.25rem);
+          margin: 2.875rem 0 1.5rem;
+    }
+
+    .stats-container  {
+      justify-content: flex-start;
+      margin-bottom: 0;
+
+      .distance-wrapper, .travel-wrapper {
+        align-items: flex-start;
+      }
+
+      .distance-wrapper{
+        margin-right: 4.25rem;
+      }
+
+      .stat {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}
