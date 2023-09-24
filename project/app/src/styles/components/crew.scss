@@ -1,7 +1,7 @@
 @use '../util/mixins.scss' as mixin;
 
 /* ========== MOBILE =========== */
-#crewPage{
+#crewPage {
   @include mixin.displayFlex(column, center, unset);
   .page-title {
     order: 1;
@@ -64,7 +64,7 @@
     }
   }
 
-  .image-wrapper{
+  .image-wrapper {
     order: 2;
     @include mixin.displayFlex(column, center, unset);
 
@@ -81,5 +81,36 @@
 }
 
 /* ========== TABLET =========== */
+@include mixin.min-media-query($tablet-xs) {
+  #crewPage {
+    .crew-text-data {
+      order: 2;
+      margin-top: 5.625rem;
+    }
+
+    .crew-text-data {
+      order: 3;
+      width: 60%;
+
+      h2 {
+        font-size: 1.5rem !important;
+        line-height: 1.5rem;
+      }
+
+      h1 {
+        font-size: 2.5rem !important;
+        line-height: 2.5rem;
+      }
+    }
+
+    .crew-nav-wrapper {
+      margin: 2rem 0 2rem;
+    }
+
+    .image-wrapper {
+      order: 4;
+    }
+  }
+}
 
 /* ========== DESKTOP =========== */

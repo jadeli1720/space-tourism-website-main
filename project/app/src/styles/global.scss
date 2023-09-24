@@ -138,6 +138,7 @@ body {
   .page-title {
     @include mixin.displayFlex(row, center, unset);
     color: white;
+    font-size: 1rem;
 
     .page-title-number{
       color: rgba(255, 255, 255, 0.25);
@@ -173,13 +174,13 @@ body {
   #destinationPage, #crewPage, #technologyPage {
     margin-top: 1.5rem;
 
-    .page-title-number{
-      @include mixin.headingFive(1.75rem);
-    }
-
     .page-title {
       position: absolute;
       left: 2.438rem;
+      font-size: 1.25rem !important;
+      .page-title-number {
+        font-size: 1.25rem !important;
+      }
     }
   }
 
